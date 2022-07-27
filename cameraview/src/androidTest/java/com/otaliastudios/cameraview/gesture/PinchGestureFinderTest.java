@@ -39,9 +39,6 @@ public class PinchGestureFinderTest extends GestureFinderTest<PinchGestureFinder
         assertEquals(finder.getPoints()[1].y, 0, 0);
     }
 
-    // TODO: test pinch open
-    // TODO: test pinch close
-    // TODO: test pinch disabled
 
     // Possible approach: mimic pinch gesture and let espresso test.
     // Too lazy to do this now, but it's possible.

@@ -27,7 +27,6 @@ public class TapGestureFinder extends GestureFinder {
             }
 
             /*
-            TODO should use onSingleTapConfirmed and enable this.
             public boolean onDoubleTap(MotionEvent e) {
                 mNotify = true;
                 mType = Gesture.DOUBLE_TAP;

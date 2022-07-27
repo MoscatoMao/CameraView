@@ -2,6 +2,7 @@
 <androidx.coordinatorlayout.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/root"
     android:background="#FF444444"
     android:layout_width="match_parent"
@@ -18,9 +19,9 @@
         app:cameraExperimental="true"
         app:cameraEngine="camera2"
         app:cameraPreview="glSurface"
-        app:cameraPlaySounds="true"
+        app:cameraPlaySounds="false"
         app:cameraGrid="off"
-        app:cameraFlash="auto"
+        app:cameraFlash="off"
         app:cameraAudio="on"
         app:cameraFacing="back"
         app:cameraGestureTap="autoFocus"
@@ -31,136 +32,197 @@
         app:cameraMode="picture"
         app:cameraAutoFocusMarker="@string/cameraview_default_autofocus_marker">
 
-        <!-- Watermark -->
-        <ImageView
-            android:id="@+id/watermark"
-            android:layout_width="72dp"
-            android:layout_height="72dp"
-            android:layout_gravity="bottom|end"
-            android:src="@mipmap/logo_foreground"
-            app:layout_drawOnPictureSnapshot="true"
-            app:layout_drawOnPreview="true"
-            app:layout_drawOnVideoSnapshot="true" />
+        <!-- 不知道有啥用 -->
+        <!--        <ImageView-->
+        <!--            android:id="@+id/watermark"-->
+        <!--            android:layout_width="72dp"-->
+        <!--            android:layout_height="72dp"-->
+        <!--            android:layout_gravity="bottom|end"-->
+        <!--            android:src="@mipmap/logo_foreground"-->
+        <!--            app:layout_drawOnPictureSnapshot="true"-->
+        <!--            app:layout_drawOnPreview="true"-->
+        <!--            app:layout_drawOnVideoSnapshot="true" />-->
 
+        <TextView
+            android:id="@+id/tempText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:text="@string/tempText"
+            android:textColor="#4CAF50"
+            android:textSize="15sp" />
+        <TextView
+            android:id="@+id/fileText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|start"
+            android:text="@string/statText"
+            android:textColor="#4CAF50"
+            android:textSize="15sp" />
+        <TextView
+            android:id="@+id/LocText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|start"
+            android:text="@string/LocText"
+            android:textColor="#4CAF50"
+            android:textSize="10sp"
+            tools:ignore="SmallSp" />
     </com.otaliastudios.cameraview.CameraView>
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_marginBottom="96dp"
-        android:layout_gravity="bottom|start">
+    <!--    <LinearLayout-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:orientation="vertical"-->
+    <!--        android:layout_marginBottom="96dp"-->
+    <!--        android:layout_gravity="bottom|start">-->
 
-        <ImageButton
-            android:id="@+id/changeFilter"
-            android:layout_width="56dp"
-            android:layout_height="56dp"
-            android:layout_margin="16dp"
-            android:background="@drawable/background"
-            android:elevation="3dp"
-            app:srcCompat="@drawable/ic_filters" />
+    <!--        &lt;!&ndash; 暂时注掉，改变滤镜没有用 &ndash;&gt;-->
+    <!--        <ImageButton-->
+    <!--            android:id="@+id/changeFilter"-->
+    <!--            android:layout_width="56dp"-->
+    <!--            android:layout_height="56dp"-->
+    <!--            android:layout_margin="16dp"-->
+    <!--            android:background="@drawable/background"-->
+    <!--            android:elevation="3dp"-->
+    <!--            app:srcCompat="@drawable/ic_filters" />-->
 
-        <ImageButton
-            android:id="@+id/toggleCamera"
-            android:layout_width="56dp"
-            android:layout_height="56dp"
-            android:layout_margin="16dp"
-            android:background="@drawable/background"
-            android:elevation="3dp"
-            app:srcCompat="@drawable/ic_switch" />
-    </LinearLayout>
+    <!--        &lt;!&ndash; 暂时注掉，前后摄像头切换没有用 &ndash;&gt;-->
+    <!--        <ImageButton-->
+    <!--            android:id="@+id/toggleCamera"-->
+    <!--            android:layout_width="56dp"-->
+    <!--            android:layout_height="56dp"-->
+    <!--            android:layout_margin="16dp"-->
+    <!--            android:background="@drawable/background"-->
+    <!--            android:elevation="3dp"-->
+    <!--            app:srcCompat="@drawable/ic_switch" />-->
+    <!--    </LinearLayout>-->
 
-    <!-- Controls -->
+    <!-- Controls weightSum原为4 -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
-        android:padding="16dp"
+        android:background="#79AF73"
         android:orientation="horizontal"
-        android:background="@color/colorPrimary"
+        android:gravity="center"
+        android:padding="16dp"
         android:weightSum="4">
 
-        <ImageButton
-            android:id="@+id/edit"
-            android:layout_width="56dp"
-            android:layout_height="56dp"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            app:srcCompat="@drawable/ic_edit" />
+        <!--        <ImageButton-->
+        <!--            android:id="@+id/edit"-->
+        <!--            android:layout_width="0dp"-->
+        <!--            android:layout_weight="1.0"-->
+        <!--            android:layout_height="56dp"-->
+        <!--            android:background="?attr/selectableItemBackgroundBorderless"-->
+        <!--            android:contentDescription="@string/editBtnText"-->
+        <!--            app:srcCompat="@drawable/ic_edit" />-->
 
-        <Space
-            android:layout_width="0dp"
-            android:layout_height="1dp"
-            android:layout_weight="1" />
+        <!--        <Space-->
+        <!--            android:layout_width="0dp"-->
+        <!--            android:layout_height="1dp"-->
+        <!--            android:layout_weight="1" />-->
 
-        <ImageButton
-            android:id="@+id/capturePicture"
-            android:layout_width="56dp"
-            android:layout_height="56dp"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            app:srcCompat="@drawable/ic_photo" />
 
-        <Space
-            android:layout_width="0dp"
-            android:layout_height="1dp"
-            android:layout_weight="1" />
+        <!--        <Space-->
+        <!--            android:layout_width="0dp"-->
+        <!--            android:layout_height="1dp"-->
+        <!--            android:layout_weight="1" />-->
+
+        <!-- layout_width 为0，加layout_weight权重即可等比例控制-->
 
         <LinearLayout
             android:id="@+id/capturePictureSnapshot"
-            android:layout_width="56dp"
+            android:layout_width="0dp"
+            android:layout_weight="1.0"
             android:layout_height="56dp"
-            android:orientation="vertical"
             android:background="?attr/selectableItemBackgroundBorderless"
-            android:gravity="center" >
+            android:gravity="center"
+            android:orientation="vertical">
+
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:srcCompat="@drawable/ic_photo"/>
+                app:srcCompat="@drawable/ic_photo" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:text="快速"
+                android:gravity="center"
                 android:textColor="@android:color/white"
-                android:textStyle="bold"
-                android:textSize="10sp"
-                android:text="SNAP"/>
+                android:textSize="15sp"
+                android:textStyle="bold" />
         </LinearLayout>
-
-        <Space
-            android:layout_width="0dp"
-            android:layout_height="1dp"
-            android:layout_weight="1" />
-
-        <ImageButton
-            android:id="@+id/captureVideo"
-            android:layout_width="56dp"
-            android:layout_height="56dp"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            app:srcCompat="@drawable/ic_video" />
-
-        <Space
-            android:layout_width="0dp"
-            android:layout_height="1dp"
-            android:layout_weight="1" />
-
-
         <LinearLayout
-            android:id="@+id/captureVideoSnapshot"
-            android:layout_width="56dp"
+            android:id="@+id/capturePicture"
+            android:layout_width="0dp"
+            android:layout_weight="1.5"
             android:layout_height="56dp"
-            android:orientation="vertical"
             android:background="?attr/selectableItemBackgroundBorderless"
-            android:gravity="center" >
+            android:gravity="center"
+            android:orientation="vertical">
+
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:srcCompat="@drawable/ic_video"/>
+                app:srcCompat="@drawable/ic_photo" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:text="高清"
+                android:gravity="center"
                 android:textColor="@android:color/white"
-                android:textStyle="bold"
-                android:textSize="10sp"
-                android:text="SNAP"/>
+                android:textSize="15sp"
+                android:textStyle="bold" />
         </LinearLayout>
+        <ImageView
+            android:id="@+id/statShow"
+            android:layout_width="0dp"
+            android:layout_weight="1.0"
+            android:layout_height="56dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/carmove" />
+
+        <!--        <Space-->
+        <!--            android:layout_width="0dp"-->
+        <!--            android:layout_height="1dp"-->
+        <!--            android:layout_weight="1" />-->
+
+        <!--        <ImageButton-->
+        <!--            android:id="@+id/captureVideo"-->
+        <!--            android:layout_width="56dp"-->
+        <!--            android:layout_height="56dp"-->
+        <!--            android:background="?attr/selectableItemBackgroundBorderless"-->
+        <!--            app:srcCompat="@drawable/ic_video" />-->
+
+        <!--        <Space-->
+        <!--            android:layout_width="0dp"-->
+        <!--            android:layout_height="1dp"-->
+        <!--            android:layout_weight="1" />-->
+
+
+        <!--        <LinearLayout-->
+        <!--            android:id="@+id/captureVideoSnapshot"-->
+        <!--            android:layout_width="56dp"-->
+        <!--            android:layout_height="56dp"-->
+        <!--            android:orientation="vertical"-->
+        <!--            android:background="?attr/selectableItemBackgroundBorderless"-->
+        <!--            android:gravity="center" >-->
+        <!--            <ImageView-->
+        <!--                android:layout_width="wrap_content"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                app:srcCompat="@drawable/ic_video"/>-->
+        <!--            <TextView-->
+        <!--                android:layout_width="wrap_content"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:textColor="@android:color/white"-->
+        <!--                android:textStyle="bold"-->
+        <!--                android:textSize="10sp"-->
+        <!--                android:text="SNAP"/>-->
+        <!--        </LinearLayout>-->
     </LinearLayout>
 
     <!-- Edit -->

@@ -327,7 +327,6 @@ public class MediaEncoderEngine {
          * Writes the given data to the muxer. Should be called after {@link #isStarted()}
          * returns true. Note: this seems to be thread safe, no lock.
          *
-         * TODO: Skip first frames from encoder A when encoder B reported a firstTimeMillis
          * time that is significantly later. This can happen even if we wait for both to start,
          * because {@link MediaEncoder#notifyFirstFrameMillis(long)} can be called while the
          * muxer is still closed.

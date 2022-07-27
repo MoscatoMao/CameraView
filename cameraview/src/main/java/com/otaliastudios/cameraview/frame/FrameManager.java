@@ -90,7 +90,6 @@ public abstract class FrameManager<T> {
      */
     public void setUp(int format, @NonNull Size size, @NonNull Angles angles) {
         if (isSetUp()) {
-            // TODO throw or just reconfigure?
         }
         mFrameSize = size;
         mFrameFormat = format;

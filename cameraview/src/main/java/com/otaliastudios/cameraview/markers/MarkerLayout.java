@@ -58,7 +58,6 @@ public class MarkerLayout extends FrameLayout {
         if (view == null) return;
         view.clearAnimation();
         if (type == TYPE_AUTOFOCUS) {
-            // TODO can't be sure that getWidth and getHeight are available here.
             PointF point = points[0];
             float x = (int) (point.x - view.getWidth() / 2);
             float y = (int) (point.y - view.getHeight() / 2);

@@ -478,12 +478,6 @@ public class Camera2Engine extends CameraBaseEngine implements
         final TaskCompletionSource<Void> task = new TaskCompletionSource<>();
 
         // Compute sizes.
-        // TODO preview stream should never be bigger than 1920x1080 as per
-        //  CameraDevice.createCaptureSession. This should be probably be applied
-        //  before all the other external selectors, to treat it as a hard limit.
-        //  OR: pass an int into these functions to be able to take smaller dims
-        //  when session configuration fails
-        //  OR: both.
         mCaptureSize = computeCaptureSize();
         mPreviewStreamSize = computePreviewStreamSize();
 
@@ -1617,7 +1611,6 @@ public class Camera2Engine extends CameraBaseEngine implements
                                 .set(CaptureRequest.CONTROL_AWB_LOCK, false);
                         holder.applyBuilder(this);
                         setState(STATE_COMPLETED);
-                        // TODO should wait results?
                     }
                 },
                 new MeterResetAction()

@@ -327,7 +327,6 @@ public abstract class FullVideoRecorder extends VideoRecorder {
             dispatchVideoRecordingEnd();
             try {
                 LOG.i("stop:", "Stopping MediaRecorder...");
-                // TODO HANGS (rare, emulator only)
                 mMediaRecorder.stop();
                 LOG.i("stop:", "Stopped MediaRecorder.");
             } catch (Exception e) {

@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">CameraView</string>
+    <string name="app_name">Baite采集</string>
+    <string name="editBtnText">编辑按钮</string>
+    <string name="LocText">定位结果</string>
+    <string name="statText">进行中状态</string>
+    <string name="tempText">温度</string>
 </resources>

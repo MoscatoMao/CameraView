@@ -105,7 +105,7 @@ import static android.view.View.MeasureSpec.UNSPECIFIED;
 import static android.view.ViewGroup.LayoutParams.MATCH_PARENT;
 
 /**
- * Entry point for the whole library.
+ * 整个库的入口.
  * Please read documentation for usage and full set of features.
  */
 public class CameraView extends FrameLayout implements LifecycleObserver {
@@ -1886,8 +1886,6 @@ public class CameraView extends FrameLayout implements LifecycleObserver {
         setVideoMaxDuration(durationMillis);
         takeVideoSnapshot(file);
     }
-
-    // TODO: pauseVideo and resumeVideo? There is mediarecorder.pause(), but API 24...
 
     /**
      * Stops capturing video or video snapshots being recorded, if there was any.

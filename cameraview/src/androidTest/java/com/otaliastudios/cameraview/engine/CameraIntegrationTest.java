@@ -666,7 +666,6 @@ public abstract class CameraIntegrationTest<E extends CameraBaseEngine> extends 
     @Retry(emulatorOnly = true)
     @SdkExclude(maxSdkVersion = 22, emulatorOnly = true)
     public void testStartEndVideoSnapshot() {
-        // TODO should check api level for snapshot?
         openSync(true);
         takeVideoSnapshotSync(true, 4000);
         waitForVideoResult(true);

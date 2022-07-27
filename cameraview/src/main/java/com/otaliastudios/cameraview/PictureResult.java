@@ -21,7 +21,7 @@ import androidx.annotation.Nullable;
 public class PictureResult {
 
     /**
-     * A result stub, for internal use only.
+     * 结果存根，仅供内部使用。
      */
     public static class Stub {
 
@@ -64,8 +64,8 @@ public class PictureResult {
     }
 
     /**
-     * Returns geographic information for this picture, if any.
-     * If it was set, it is also present in the file metadata.
+     * 返回此图片的地理信息（如果有）
+     * 如果已设置，它也存在于文件元数据中。
      *
      * @return a nullable Location
      */
@@ -75,9 +75,7 @@ public class PictureResult {
     }
 
     /**
-     * Returns the clock-wise rotation that should be applied to the
-     * picture before displaying. If it is non-zero, it is also present
-     * in the EXIF metadata.
+     * 返回显示前应应用于图片的顺时针旋转。 如果它不为零，则它也存在于 EXIF 元数据中。
      *
      * @return the clock-wise rotation
      */
@@ -106,8 +104,7 @@ public class PictureResult {
     }
 
     /**
-     * Returns the raw compressed, ready to be saved to file,
-     * in the given format.
+     * 返回给定格式的原始压缩文件，准备保存到文件中。
      *
      * @return the compressed data stream
      */

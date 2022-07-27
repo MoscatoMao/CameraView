@@ -320,7 +320,6 @@ public abstract class MediaEncoder {
     @CallSuper
     protected void onStopped() {
         LOG.w(mName, "is being released. Notifying controller and releasing codecs.");
-        // TODO should we call notifyStopped after this method ends?
         mController.notifyStopped(mTrackIndex);
         mMediaCodec.stop();
         mMediaCodec.release();
@@ -420,7 +419,7 @@ public abstract class MediaEncoder {
                 // should happen before receiving buffers, and should only happen once
                 if (mController.isStarted()) {
                     // throw new RuntimeException("MediaFormat changed twice.");
-                    // Seen this happen in API31. TODO handle differently?
+                    // Seen this happen in API31.
                 } else {
                     MediaFormat newFormat = mMediaCodec.getOutputFormat();
                     mTrackIndex = mController.notifyStarted(newFormat);
